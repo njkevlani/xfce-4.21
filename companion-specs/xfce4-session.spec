@@ -1,0 +1,78 @@
+%global xfceversion 4.21
+
+Name:           xfce4-session
+Version:        4.21.2
+Release:        %autorelease
+Summary:        Session manager and client library for the Xfce Desktop Environment
+
+License:        GPL-2.0-or-later
+URL:            https://docs.xfce.org/xfce/xfce4-session/start
+Source0:        https://archive.xfce.org/src/xfce/%{name}/%{xfceversion}/%{name}-%{version}.tar.xz
+
+BuildRequires:  gcc
+BuildRequires:  meson >= 0.56.0
+BuildRequires:  ninja-build
+BuildRequires:  gettext
+BuildRequires:  desktop-file-utils
+BuildRequires:  pkgconfig(glib-2.0) >= 2.76.0
+BuildRequires:  pkgconfig(gtk+-3.0) >= 3.24.0
+BuildRequires:  pkgconfig(libxfce4util-1.0) >= 4.21.0
+BuildRequires:  pkgconfig(libxfce4ui-2) >= 4.21.0
+BuildRequires:  pkgconfig(libxfce4windowing-0) >= 4.19.2
+BuildRequires:  pkgconfig(libxfconf-0) >= 4.12.0
+BuildRequires:  pkgconfig(gtk-layer-shell-0) >= 0.7.0
+BuildRequires:  pkgconfig(wayland-client) >= 1.23
+BuildRequires:  pkgconfig(libwnck-3.0) >= 3.10.0
+BuildRequires:  pkgconfig(polkit-gobject-1)
+BuildRequires:  libSM-devel
+BuildRequires:  libICE-devel
+BuildRequires:  iceauth
+BuildRequires:  xrdb
+BuildRequires:  xset
+
+Requires:       iceauth
+Requires:       xrdb
+
+%description
+This package includes the session manager and the libxfce4session-client
+library for the Xfce Desktop Environment, supporting both X11 and Wayland sessions.
+
+%package        devel
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+
+%description    devel
+This package includes development files and headers for %{name}.
+
+%prep
+%autosetup -p1 -n %{name}-%{version}
+
+%build
+%meson \
+    -Dwayland=enabled \
+    -Dx11=enabled
+%meson_build
+
+%install
+%meson_install
+%find_lang %{name}
+
+%files -f %{name}.lang
+%license COPYING
+%doc AUTHORS NEWS
+%{_bindir}/*
+%{_libdir}/libxfce4session-client-1.so.*
+%{_datadir}/applications/*.desktop
+%{_datadir}/icons/hicolor/*/*/*
+%{_datadir}/themes/Default/balou/
+%{_datadir}/xfce4-session/
+%{_sysconfdir}/xdg/xfce4/
+%{_mandir}/man1/*
+
+%files devel
+%{_includedir}/xfce4/libxfce4session-client-1/
+%{_libdir}/libxfce4session-client-1.so
+%{_libdir}/pkgconfig/libxfce4session-client-1.pc
+
+%changelog
+%autochangelog

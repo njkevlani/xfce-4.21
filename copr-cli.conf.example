@@ -1,0 +1,8 @@
+# Example configuration for Copr CLI (~/.config/copr)
+# You can obtain your API token from: https://copr.fedorainfracloud.org/api/
+
+[copr-cli]
+# login = <your-fas-username>
+# username = <your-fas-username>
+# token = <your-api-token>
+# copr_url = https://copr.fedorainfracloud.org
