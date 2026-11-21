@@ -43,6 +43,8 @@ This package includes development files and documentation for %{name}.
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS NEWS
+%{_bindir}/*
+%{_sbindir}/*
 %{_libdir}/libxfce4util.so.*
 %{_libdir}/girepository-1.0/Libxfce4util-1.0.typelib
 
@@ -51,7 +53,7 @@ This package includes development files and documentation for %{name}.
 %{_libdir}/libxfce4util.so
 %{_libdir}/pkgconfig/libxfce4util-1.0.pc
 %{_datadir}/gir-1.0/Libxfce4util-1.0.gir
-%{_datadir}/vala/vapi/libxfce4util-1.0.vapi
+%{_datadir}/vala/vapi/libxfce4util-1.0*
 
 %changelog
 %autochangelog

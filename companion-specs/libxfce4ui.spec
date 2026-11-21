@@ -54,7 +54,7 @@ This package includes development files and headers for %{name}.
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS NEWS
-%{_bindir}/xfce4-about
+%{_bindir}/*
 %{_libdir}/libxfce4ui-2.so.*
 %{_libdir}/libxfce4kbd-private-3.so.*
 %{_libdir}/girepository-1.0/Libxfce4ui-2.0.typelib
@@ -69,7 +69,7 @@ This package includes development files and headers for %{name}.
 %{_libdir}/pkgconfig/libxfce4ui-2.pc
 %{_libdir}/pkgconfig/libxfce4kbd-private-3.pc
 %{_datadir}/gir-1.0/Libxfce4ui-2.0.gir
-%{_datadir}/vala/vapi/libxfce4ui-2.vapi
+%{_datadir}/vala/vapi/libxfce4ui-2*
 
 %changelog
 %autochangelog

@@ -62,10 +62,14 @@ This package includes development files and headers for %{name}.
 %doc AUTHORS NEWS
 %{_bindir}/*
 %{_libdir}/libxfce4session-client-1.so.*
+%{_libdir}/xfce4/session/
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*
-%{_datadir}/themes/Default/balou/
-%{_datadir}/xfce4-session/
+%{_datadir}/polkit-1/actions/*
+%{_datadir}/xdg-desktop-portal/*
+%{_datadir}/xsessions/*
+%{_datadir}/wayland-sessions/*
+%{_datadir}/xfce4/
 %{_sysconfdir}/xdg/xfce4/
 %{_mandir}/man1/*
 

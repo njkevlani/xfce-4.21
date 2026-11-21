@@ -1,4 +1,5 @@
 %global xfceversion 4.20
+%global api_majorver 0
 
 Name:           libxfce4windowing
 Version:        4.20.7
@@ -23,6 +24,7 @@ BuildRequires:  pkgconfig(wlr-protocols)
 BuildRequires:  pkgconfig(gdk-wayland-3.0) >= 3.24.10
 BuildRequires:  pkgconfig(gdk-x11-3.0) >= 3.24.10
 BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(libdisplay-info) >= 0.1.1
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  vala
 
@@ -57,8 +59,7 @@ This package includes development files and documentation for %{name}.
 %{_libdir}/libxfce4windowing-0.so.*
 %{_libdir}/libxfce4windowing-x11-0.so.*
 %{_libdir}/libxfce4windowingui-0.so.*
-%{_libdir}/girepository-1.0/Libxfce4windowing-0.0.typelib
-%{_libdir}/girepository-1.0/Libxfce4windowingui-0.0.typelib
+%{_libdir}/girepository-1.0/Libxfce4windowing*-%{api_majorver}.0.typelib
 
 %files devel
 %{_includedir}/xfce4/libxfce4windowing/
@@ -69,10 +70,8 @@ This package includes development files and documentation for %{name}.
 %{_libdir}/pkgconfig/libxfce4windowing-0.pc
 %{_libdir}/pkgconfig/libxfce4windowing-x11-0.pc
 %{_libdir}/pkgconfig/libxfce4windowingui-0.pc
-%{_datadir}/gir-1.0/Libxfce4windowing-0.0.gir
-%{_datadir}/gir-1.0/Libxfce4windowingui-0.0.gir
-%{_datadir}/vala/vapi/libxfce4windowing-0.vapi
-%{_datadir}/vala/vapi/libxfce4windowingui-0.vapi
+%{_datadir}/gir-1.0/Libxfce4windowing*-%{api_majorver}.0.gir
+%{_datadir}/vala/vapi/libxfce4windowing*
 
 %changelog
 %autochangelog
