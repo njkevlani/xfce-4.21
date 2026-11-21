@@ -22,6 +22,10 @@ BuildRequires:  pkgconfig(libxfce4windowing-0) >= 4.19.2
 BuildRequires:  pkgconfig(libxfconf-0) >= 4.12.0
 BuildRequires:  pkgconfig(gtk-layer-shell-0) >= 0.7.0
 BuildRequires:  pkgconfig(wayland-client) >= 1.23
+BuildRequires:  pkgconfig(wayland-protocols) >= 1.25
+BuildRequires:  pkgconfig(wayland-scanner) >= 1.20
+BuildRequires:  pkgconfig(gdk-wayland-3.0) >= 3.24.0
+BuildRequires:  pkgconfig(gdk-x11-3.0) >= 3.24.0
 BuildRequires:  pkgconfig(libwnck-3.0) >= 3.10.0
 BuildRequires:  pkgconfig(polkit-gobject-1)
 BuildRequires:  libSM-devel
