@@ -28,6 +28,8 @@ BuildRequires:  libICE-devel
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  vala
 
+Requires:       libxfce4util%{?_isa} >= 4.21.0
+
 %description
 Commonly used Xfce widgets and desktop integration functions.
 

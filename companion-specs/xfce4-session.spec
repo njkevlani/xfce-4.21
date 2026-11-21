@@ -38,6 +38,8 @@ BuildRequires:  xset
 
 Requires:       iceauth
 Requires:       xrdb
+Requires:       libxfce4ui%{?_isa} >= 4.21.0
+Requires:       libxfce4util%{?_isa} >= 4.21.0
 
 %description
 This package includes the session manager and the libxfce4session-client

@@ -49,6 +49,9 @@ BuildRequires:  pkgconfig(gstreamer-1.0) >= 1.18.0
 BuildRequires:  gstreamer1-plugins-good-gtk
 
 # Runtime requirements
+Requires:       libxfce4ui%{?_isa} >= 4.21.0
+Requires:       libxfce4windowing%{?_isa} >= 4.20.6
+Requires:       libxfce4util%{?_isa} >= 4.21.0
 Requires:       xfwm4 >= 4.20.0
 Requires:       xfce4-panel >= 4.20.0
 Requires:       redhat-menus
