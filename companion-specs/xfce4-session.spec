@@ -14,6 +14,8 @@ BuildRequires:  meson >= 0.56.0
 BuildRequires:  ninja-build
 BuildRequires:  gettext
 BuildRequires:  desktop-file-utils
+BuildRequires:  gobject-introspection-devel
+BuildRequires:  vala
 BuildRequires:  pkgconfig(glib-2.0) >= 2.76.0
 BuildRequires:  pkgconfig(gtk+-3.0) >= 3.24.0
 BuildRequires:  pkgconfig(libxfce4util-1.0) >= 4.21.0
@@ -54,7 +56,8 @@ This package includes development files and headers for %{name}.
 %build
 %meson \
     -Dwayland=enabled \
-    -Dx11=enabled
+    -Dx11=enabled \
+    -Dgtk-doc=false
 %meson_build
 
 %install
@@ -66,6 +69,7 @@ This package includes development files and headers for %{name}.
 %doc AUTHORS NEWS
 %{_bindir}/*
 %{_libdir}/libxfce4session-client-1.so.*
+%{_libdir}/girepository-1.0/*
 %{_libdir}/xfce4/session/
 %{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*
@@ -81,6 +85,8 @@ This package includes development files and headers for %{name}.
 %{_includedir}/xfce4/libxfce4session-client-1/
 %{_libdir}/libxfce4session-client-1.so
 %{_libdir}/pkgconfig/libxfce4session-client-1.pc
+%{_datadir}/gir-1.0/*
+%{_datadir}/vala/vapi/*
 
 %changelog
 %autochangelog
