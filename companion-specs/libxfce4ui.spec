@@ -42,9 +42,7 @@ This package includes development files and headers for %{name}.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-%meson \
-    -Dgtk-doc=false \
-    -Dtests=false
+%meson -Dgtk-doc=false
 %meson_build
 
 %install

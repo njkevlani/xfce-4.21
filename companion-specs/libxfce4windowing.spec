@@ -24,6 +24,8 @@ BuildRequires:  pkgconfig(wlr-protocols)
 BuildRequires:  pkgconfig(gdk-wayland-3.0) >= 3.24.10
 BuildRequires:  pkgconfig(gdk-x11-3.0) >= 3.24.10
 BuildRequires:  pkgconfig(x11)
+BuildRequires:  pkgconfig(xrandr) >= 1.5.0
+BuildRequires:  pkgconfig(libwnck-3.0) >= 3.10
 BuildRequires:  pkgconfig(libdisplay-info) >= 0.1.1
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  vala
@@ -46,7 +48,8 @@ This package includes development files and documentation for %{name}.
 %meson \
     -Dx11=enabled \
     -Dwayland=enabled \
-    -Dgtk-doc=false
+    -Dgtk-doc=false \
+    -Dtests=false
 %meson_build
 
 %install
