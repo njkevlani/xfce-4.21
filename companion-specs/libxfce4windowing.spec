@@ -58,23 +58,16 @@ This package includes development files and documentation for %{name}.
 
 %files -f %{name}.lang
 %license COPYING
-%doc AUTHORS NEWS
-%{_libdir}/libxfce4windowing-0.so.*
-%{_libdir}/libxfce4windowing-x11-0.so.*
-%{_libdir}/libxfce4windowingui-0.so.*
-%{_libdir}/girepository-1.0/Libxfce4windowing*-%{api_majorver}.0.typelib
+%doc NEWS
+%{_libdir}/%{name}*.so.%{api_majorver}{,.*}
+%{_libdir}/girepository-1.0/*
 
 %files devel
-%{_includedir}/xfce4/libxfce4windowing/
-%{_includedir}/xfce4/libxfce4windowingui/
-%{_libdir}/libxfce4windowing-0.so
-%{_libdir}/libxfce4windowing-x11-0.so
-%{_libdir}/libxfce4windowingui-0.so
-%{_libdir}/pkgconfig/libxfce4windowing-0.pc
-%{_libdir}/pkgconfig/libxfce4windowing-x11-0.pc
-%{_libdir}/pkgconfig/libxfce4windowingui-0.pc
-%{_datadir}/gir-1.0/Libxfce4windowing*-%{api_majorver}.0.gir
-%{_datadir}/vala/vapi/libxfce4windowing*
+%{_includedir}/xfce4/
+%{_libdir}/%{name}*.so
+%{_libdir}/pkgconfig/%{name}*.pc
+%{_datadir}/gir-1.0/*
+%{_datadir}/vala/vapi/*
 
 %changelog
 %autochangelog

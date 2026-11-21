@@ -52,22 +52,20 @@ This package includes development files and headers for %{name}.
 %files -f %{name}.lang
 %license COPYING
 %doc AUTHORS NEWS
+%config(noreplace) %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 %{_bindir}/*
-%{_libdir}/libxfce4ui-2.so.*
-%{_libdir}/libxfce4kbd-private-3.so.*
-%{_libdir}/girepository-1.0/Libxfce4ui-2.0.typelib
-%{_datadir}/applications/xfce4-about.desktop
+%{_libdir}/*.so.*
+%{_libdir}/girepository-1.0/*
+%{_datadir}/applications/*.desktop
 %{_datadir}/icons/hicolor/*/*/*
+%{_datadir}/pixmaps/*
 
 %files devel
-%{_includedir}/xfce4/libxfce4ui-2/
-%{_includedir}/xfce4/libxfce4kbd-private-3/
-%{_libdir}/libxfce4ui-2.so
-%{_libdir}/libxfce4kbd-private-3.so
-%{_libdir}/pkgconfig/libxfce4ui-2.pc
-%{_libdir}/pkgconfig/libxfce4kbd-private-3.pc
-%{_datadir}/gir-1.0/Libxfce4ui-2.0.gir
-%{_datadir}/vala/vapi/libxfce4ui-2*
+%{_includedir}/*
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/*.pc
+%{_datadir}/gir-1.0/*
+%{_datadir}/vala/vapi/*
 
 %changelog
 %autochangelog
